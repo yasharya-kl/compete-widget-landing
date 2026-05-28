@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Compete Widget 2.0 · Landing Page</title>
+<link rel="stylesheet" href="colors_and_type.css"/>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css"/>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css"/>
+<meta name="ext-resource-dependency" content="assets/images/salesforce-klue-widget.png" data-resource-id="sfWidget"/>
+<meta name="ext-resource-dependency" content="assets/images/widget-panel.png" data-resource-id="widgetPanel"/>
+<meta name="ext-resource-dependency" content="assets/logos/klue-wordmark.svg" data-resource-id="wordmarkBlack"/>
+<meta name="ext-resource-dependency" content="assets/logos/klue-wordmark-white.svg" data-resource-id="wordmarkWhite"/>
+<meta name="ext-resource-dependency" content="assets/videos/klue-in-action.mp4" data-resource-id="demoVideo"/>
+<style>
+  html, body { margin: 0; padding: 0; background: #1c1c1e; }
+  *, *::before, *::after { box-sizing: border-box; }
+  /* Make the landing pages render at their full design width inside the artboard */
+  .lp-artboard { width: 1440px; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="image-slot.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#00CCFF">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <rect width="200" height="200" fill="#00CCFF"/>
+    <g transform="translate(76 67)" fill="#0A0A0A">
+      <path d="M 0.265 31.011 C -0.122 30.547 -0.08 29.862 0.361 29.449 L 31.479 0.308 C 31.69 0.11 31.969 0 32.259 0 L 47.128 0 C 48.154 0 48.658 1.247 47.921 1.96 L 18.984 29.908 C 18.556 30.321 18.518 30.993 18.896 31.452 L 46.514 64.99 C 47.126 65.734 46.597 66.855 45.633 66.855 L 29.635 66.855 C 29.286 66.855 28.957 66.696 28.74 66.422 L 8.571 40.952 C 8.569 40.951 8.567 40.95 8.565 40.952 C 8.563 40.954 8.56 40.954 8.559 40.952 L 0.265 31.011 Z"/>
+    </g>
+  </svg>
+</template>
+<div id="root"></div>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="landing-shared.jsx"></script>
+<script type="text/babel" src="landing-a.jsx"></script>
+<script type="text/babel" src="landing-b.jsx"></script>
+
+<script type="text/babel" data-presets="env,react">
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "heroHeadlineA": "Your CRM, finally worth opening.",
+    "heroHeadlineB": "Stop logging deals. Start winning them.",
+    "problemStatement": "Your reps are spending 20–30 on pre-call prep bouncing between multiple tools.\nThat's time they could be *running another discovery call* or *advancing a different deal*.",
+    "ctaLabel": "See How It Works"
+  }/*EDITMODE-END*/;
+
+  function App() {
+    const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+    return (
+      <React.Fragment>
+        <DesignCanvas>
+          <DCSection id="landing" title="Compete Widget 2.0 · Landing page" subtitle="Klue-native landing page — focus the artboard to scroll the full page.">
+            <DCArtboard id="a" label="Landing Page" width={1440} height={4400}>
+              <div className="lp-artboard"><LandingA tweaks={tweaks}/></div>
+            </DCArtboard>
+          </DCSection>
+        </DesignCanvas>
+
+        <TweaksPanel title="Tweaks">
+          <TweakSection title="Copy">
+            <TweakText label="Problem statement" value={tweaks.problemStatement} onChange={v => setTweak('problemStatement', v)} multiline rows={5}/>
+            <TweakText label="Hero headline" value={tweaks.heroHeadlineA} onChange={v => setTweak('heroHeadlineA', v)} multiline rows={2}/>
+            <TweakText label="Primary CTA label" value={tweaks.ctaLabel} onChange={v => setTweak('ctaLabel', v)}/>
+          </TweakSection>
+        </TweaksPanel>
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

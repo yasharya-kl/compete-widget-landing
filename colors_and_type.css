@@ -1,0 +1,335 @@
+/* ==========================================================================
+   Klue — Colors & Type
+   Sourced from Klue Brand Guideline (Figma) and marketing/product surfaces.
+   ========================================================================== */
+
+/* -----------------------------  FONT FACES  ----------------------------- */
+
+/* Proxima Nova — primary UI & body typeface */
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("fonts/ProximaNova-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("fonts/ProximaNova-RegularIt.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("fonts/ProximaNova-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("fonts/ProximaNova-SemiboldIt.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("fonts/ProximaNova-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("fonts/ProximaNova-BoldIt.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("fonts/ProximaNova-Extrabld.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("fonts/ProximaNova-ExtrabldIt.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* "Family" — display serif used for marketing hero titles & editorial.
+   Designers: this is the brand's editorial serif. If you have a higher-
+   fidelity OTF/TTF with more weights, drop it into /fonts and update. */
+@font-face {
+  font-family: "Family";
+  src: url("fonts/family-regular.woff2") format("woff2"),
+       url("fonts/Family-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Family";
+  src: url("fonts/family-italic.woff2") format("woff2"),
+       url("fonts/Family-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Family";
+  src: url("fonts/family-bold.woff2") format("woff2"),
+       url("fonts/Family-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Family";
+  src: url("fonts/family-bold-italic.woff2") format("woff2"),
+       url("fonts/Family-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* -----------------------------  COLOR TOKENS  ----------------------------- */
+
+:root {
+  /* ---- Primary palette ---- */
+  --klue-cyan:        #00CCFF;   /* Signature Klue cyan — heroes, accents */
+  --klue-cyan-light:  #9CEBFF;   /* Lighter cyan tint */
+  --klue-ice:         #E1F4FF;   /* Ice — soft bg for cards, callouts */
+  --klue-deep:        #0B5C8A;   /* Deep cyan — body copy on ice bg */
+  --klue-navy:        #000A54;   /* Navy for radial gradient vignettes */
+
+  --klue-black:       #000000;
+  --klue-ink:         #0A0A0A;   /* Marketing black — slightly softer */
+  --klue-charcoal:    #1F1F1F;   /* Button outline / body on white */
+  --klue-white:       #FFFFFF;
+  --klue-bone:        #F8F6F7;   /* Off-white neutral surface */
+
+  /* ---- Secondary / accent ---- */
+  --klue-seafoam:     #6CF7C5;   /* Primary CTA accent */
+
+  /* ---- Neutrals (grays) ---- */
+  --gray-900: #1F1F1F;
+  --gray-700: #464646;
+  --gray-500: #717171;
+  --gray-400: #AFAFAF;
+  --gray-300: #BDBDBD;
+  --gray-200: #D9D9D9;
+  --gray-150: #E4E4E4;
+  --gray-100: #E5E5E5;
+  --gray-50:  #EDEAE4;
+
+  /* ---- Semantic ---- */
+  --success-bg:     #F2FFF8;
+  --success-border: #CCF4DE;
+  --success-fg:     #1EB158;
+  --warning-bg:     #FFF7E3;
+  --warning-border: #FFEFC8;
+  --warning-fg:     #E18700;
+  --danger-bg:      #FFF2F3;
+  --danger-border:  #FFD2DC;
+  --danger-fg:      #EB111C;
+  --info-bg:        var(--klue-ice);
+  --info-fg:        var(--klue-deep);
+
+  /* ---- Foreground / background roles ---- */
+  --fg-1: var(--klue-charcoal);   /* primary text */
+  --fg-2: var(--gray-500);        /* secondary text */
+  --fg-3: var(--gray-400);        /* tertiary/placeholder */
+  --fg-inverse: var(--klue-white);
+  --fg-link: var(--klue-electric);
+  --fg-brand: var(--klue-deep);
+
+  --bg-page:    var(--klue-white);
+  --bg-alt:     var(--klue-bone);
+  --bg-brand:   var(--klue-cyan);   /* signature brand bg */
+  --bg-dark:    var(--klue-ink);
+  --bg-info:    var(--klue-ice);
+  --bg-card:    var(--klue-white);
+
+  --border-default: var(--gray-150);
+  --border-subtle:  rgba(101,151,178,0.08);
+  --border-strong:  var(--klue-charcoal);
+
+  /* ---- Type families ---- */
+  --font-sans:    "Proxima Nova", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-serif:   "Family", "Tiempos Headline", "Freight Display Pro", Georgia, serif;
+  --font-display: "Proxima Nova", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* ---- Radii ---- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 7px;    /* buttons */
+  --radius-lg: 10px;   /* cards */
+  --radius-xl: 16px;
+  --radius-full: 999px;
+
+  /* ---- Shadows ---- */
+  --shadow-xs: 0 1px 2px 0 rgba(1,22,39,0.10);
+  --shadow-sm: 0 2px 4px 0 rgba(1,22,39,0.08);
+  --shadow-md: 0 8px 24px -8px rgba(1,22,39,0.12);
+  --shadow-lg: 0 20px 48px -12px rgba(1,22,39,0.18);
+  --shadow-glow: 0 0 0 4px rgba(0,204,255,0.25);
+
+  /* ---- Spacing scale (4-based) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 120px;
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-quick:   120ms;
+  --dur-base:    200ms;
+  --dur-slow:    320ms;
+}
+
+/* --------------------------  SEMANTIC TYPE STYLES  ------------------------ */
+
+html, body { font-family: var(--font-sans); color: var(--fg-1); background: var(--bg-page); }
+
+/* Marketing display — serif "Family", near-tight leading, true title case */
+.k-display,
+.k-hero {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(48px, 6vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--klue-ink);
+}
+
+/* Product/marketing H1 — Proxima Nova Extra Bold, title case */
+h1, .k-h1 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(40px, 4.6vw, 74px);
+  line-height: 0.95;
+  letter-spacing: -0.005em;
+  color: var(--klue-ink);
+  margin: 0;
+}
+
+/* H2 — Family Regular, editorial */
+h2, .k-h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(32px, 3.2vw, 48px);
+  line-height: 1;
+  color: var(--klue-ink);
+  margin: 0;
+}
+
+/* H3 — Proxima Nova Semibold */
+h3, .k-h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.15;
+  color: var(--fg-1);
+  margin: 0;
+}
+
+/* H4 — Family Regular small title, used in bento cards */
+h4, .k-h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.1;
+  color: var(--klue-ink);
+  margin: 0;
+}
+
+/* Eyebrow — Proxima Nova, ALL CAPS, 0.15em tracking */
+.k-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-1);
+}
+.k-eyebrow--on-cyan { color: var(--klue-ice); }
+.k-eyebrow--inverse { color: var(--klue-white); }
+
+/* Body */
+p, .k-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--fg-1);
+}
+.k-body--lg { font-size: 18px; line-height: 1.5; }
+.k-body--sm { font-size: 14px; line-height: 1.45; }
+.k-body--on-ice { color: var(--klue-deep); }
+
+/* Callout — italic editorial, serif, used for pull quotes & blog intros */
+.k-callout {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--fg-1);
+}
+
+/* Label / short text — uppercase, 0.15em tracking, 13px */
+.k-label, .k-button-label {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.25;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.k-label--sm { font-size: 11px; letter-spacing: 0.10em; }
+
+/* Pull quote — serif, large, usually centered */
+.k-quote {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.5;
+  color: var(--klue-ink);
+}
+
+/* Underlined text link (marketing) */
+.k-link {
+  color: currentColor;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+code, .k-mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+/* ----------------------------  UTILITY HELPERS  --------------------------- */
+
+.k-bg-cyan  { background: var(--klue-cyan); }
+.k-bg-ice   { background: var(--klue-ice); }
+.k-bg-dark  { background: var(--klue-ink); color: var(--klue-white); }
+.k-bg-bone  { background: var(--klue-bone); }
+
+.k-container { max-width: 1280px; margin-inline: auto; padding-inline: var(--space-7); }
